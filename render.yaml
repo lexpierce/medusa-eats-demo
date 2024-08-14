@@ -1,0 +1,105 @@
+# Exported from Render on 2024-08-14T12:25:33Z
+databases:
+  - name: medusa-db
+    databaseName: medusa_db_ghqs
+    user: medusa_db_ghqs_user
+    region: virginia
+    ipAllowList:
+    - source: 0.0.0.0/0
+      description: everywhere
+    postgresMajorVersion: "16"
+    highAvailability:
+      enabled: true
+    readReplica:
+    - medusa-db-replica
+services:
+- type: web
+  name: pgAdmin-dpg-cqt5i4dsvqrc73d0j8vg-a
+  runtime: docker
+  repo: https://github.com/render-examples/pgadmin
+  plan: starter
+  envVars:
+  - key: servers.json
+    sync: false
+  - key: pgpassfile
+    sync: false
+  - key: PORT
+    sync: false
+  - key: PGADMIN_SERVER_JSON_FILE
+    sync: false
+  - key: PGADMIN_LISTEN_PORT
+    sync: false
+  - key: PGADMIN_DEFAULT_PASSWORD
+    sync: false
+  - key: PGADMIN_DEFAULT_EMAIL
+    sync: false
+  - key: PGADMIN_DATABASE_USER
+    sync: false
+  - key: PGADMIN_DATABASE_NAME
+    sync: false
+  - key: PGADMIN_DATABASE_HOST
+    fromDatabase:
+      name: medusa-db
+      property: host
+  - key: GUNICORN_THREADS
+    sync: false
+  region: virginia
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+  disk:
+    name: pgadmin
+    mountPath: /var/lib/pgadmin
+    sizeGB: 1
+- type: web
+  name: medusa-help-center
+  runtime: static
+  repo: https://github.com/StephenBarlow/help-center
+  buildCommand: yarn install; yarn build
+  staticPublishPath: ./build
+- type: web
+  name: medusa-api
+  runtime: node
+  repo: https://github.com/renderinc/gartner-demo-2024-medusa-eats
+  plan: pro
+  envVars:
+  - key: REDIS_URL
+    fromService:
+      name: medusa-redis
+      type: redis
+      property: hostport
+  - key: FRONTEND_URL
+    sync: false
+  - key: DATABASE_URL
+    fromDatabase:
+      name: medusa-db
+      property: connectionString
+  - fromGroup: Medusa Eats Secrets
+  region: virginia
+  buildCommand: yarn install; yarn run build
+  startCommand: yarn run start
+  scaling:
+    minInstances: 2
+    maxInstances: 4
+    targetCPUPercent: 80
+    targetMemoryPercent: 80
+  rootDir: ./backend
+- type: web
+  name: medusa-frontend
+  runtime: node
+  repo: https://github.com/renderinc/gartner-demo-2024-medusa-eats
+  plan: starter
+  envVars:
+  - key: BACKEND_URL
+    sync: false
+  - fromGroup: Medusa Eats Secrets
+  region: virginia
+  buildCommand: yarn install; yarn run build
+  startCommand: yarn run start
+  rootDir: ./frontend
+- type: redis
+  name: medusa-redis
+  plan: starter
+  region: virginia
+  maxmemoryPolicy: allkeys-lru
+  ipAllowList: []
+version: "1"
