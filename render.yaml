@@ -103,3 +103,4 @@ services:
   maxmemoryPolicy: allkeys-lru
   ipAllowList: []
 version: "1"
+previewsEnabled: true
