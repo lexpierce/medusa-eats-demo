@@ -78,8 +78,8 @@ services:
   buildCommand: yarn install; yarn run build
   startCommand: yarn run start
   scaling:
-    minInstances: 2
-    maxInstances: 4
+    minInstances: 1
+    maxInstances: 5
     targetCPUPercent: 80
     targetMemoryPercent: 80
   rootDir: ./backend
@@ -87,7 +87,7 @@ services:
   name: medusa-frontend
   runtime: node
   repo: https://github.com/renderinc/gartner-demo-2024-medusa-eats
-  plan: starter
+  plan: pro
   envVars:
   - key: BACKEND_URL
     sync: false
