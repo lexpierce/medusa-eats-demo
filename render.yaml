@@ -1,4 +1,4 @@
-# Exported from Render on 2024-08-14T12:52:54Z
+previewsEnabled: true
 databases:
   - name: medusa-db
     databaseName: medusa_db_ghqs
@@ -103,4 +103,3 @@ services:
   maxmemoryPolicy: allkeys-lru
   ipAllowList: []
 version: "1"
-previewsEnabled: true
