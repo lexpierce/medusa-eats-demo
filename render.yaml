@@ -1,4 +1,4 @@
-# Exported from Render on 2024-08-14T12:25:33Z
+# Exported from Render on 2024-08-14T12:52:54Z
 databases:
   - name: medusa-db
     databaseName: medusa_db_ghqs
@@ -10,8 +10,8 @@ databases:
     postgresMajorVersion: "16"
     highAvailability:
       enabled: true
-    readReplica:
-    - medusa-db-replica
+    readReplicas:
+    - name: medusa-db-replica
 services:
 - type: web
   name: pgAdmin-dpg-cqt5i4dsvqrc73d0j8vg-a
