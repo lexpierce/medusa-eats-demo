@@ -4,9 +4,7 @@ databases:
     databaseName: medusa_db_ghqs
     user: medusa_db_ghqs_user
     region: virginia
-    ipAllowList:
-    - source: 0.0.0.0/0
-      description: everywhere
+    ipAllowList: []
     postgresMajorVersion: "16"
 services:
 - type: web
