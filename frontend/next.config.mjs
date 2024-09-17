@@ -11,11 +11,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "robohash.org",
-      },
-      {
-        protocol: "https",
-        hostname: "medusa-eats.vercel.app",
+        hostname: "medusa-eats-demo.onrender.com",
       },
     ],
   },
