@@ -1,6 +1,6 @@
 previewsEnabled: true
 databases:
-  - name: medusa-db
+  - name: medusa-db-blueprint
     databaseName: medusa_db_ghqs
     user: medusa_db_ghqs_user
     region: virginia
@@ -54,7 +54,7 @@ services:
   startCommand: yarn run start
   rootDir: ./frontend
 - type: redis
-  name: medusa-redis
+  name: medusa-redis-blueprint
   plan: starter
   region: virginia
   maxmemoryPolicy: allkeys-lru
