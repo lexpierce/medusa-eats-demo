@@ -29,6 +29,7 @@ services:
   region: virginia
   buildCommand: yarn install; yarn run build
   startCommand: yarn run start
+  preDeployCommand: yarn run setup-db
   scaling:
     minInstances: 1
     maxInstances: 5
