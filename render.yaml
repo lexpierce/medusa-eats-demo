@@ -8,58 +8,11 @@ databases:
     - source: 0.0.0.0/0
       description: everywhere
     postgresMajorVersion: "16"
-    highAvailability:
-      enabled: true
-    readReplicas:
-    - name: medusa-db-replica
 services:
-- type: web
-  name: pgAdmin-dpg-cqt5i4dsvqrc73d0j8vg-a
-  runtime: docker
-  repo: https://github.com/render-examples/pgadmin
-  plan: starter
-  envVars:
-  - key: servers.json
-    sync: false
-  - key: pgpassfile
-    sync: false
-  - key: PORT
-    sync: false
-  - key: PGADMIN_SERVER_JSON_FILE
-    sync: false
-  - key: PGADMIN_LISTEN_PORT
-    sync: false
-  - key: PGADMIN_DEFAULT_PASSWORD
-    sync: false
-  - key: PGADMIN_DEFAULT_EMAIL
-    sync: false
-  - key: PGADMIN_DATABASE_USER
-    sync: false
-  - key: PGADMIN_DATABASE_NAME
-    sync: false
-  - key: PGADMIN_DATABASE_HOST
-    fromDatabase:
-      name: medusa-db
-      property: host
-  - key: GUNICORN_THREADS
-    sync: false
-  region: virginia
-  dockerContext: .
-  dockerfilePath: ./Dockerfile
-  disk:
-    name: pgadmin
-    mountPath: /var/lib/pgadmin
-    sizeGB: 1
-- type: web
-  name: medusa-help-center
-  runtime: static
-  repo: https://github.com/StephenBarlow/help-center
-  buildCommand: yarn install; yarn build
-  staticPublishPath: ./build
 - type: web
   name: medusa-api
   runtime: node
-  repo: https://github.com/renderinc/gartner-demo-2024-medusa-eats
+  repo: https://github.com/lexpierce/medusa-eats-demo
   plan: pro
   envVars:
   - key: REDIS_URL
@@ -86,7 +39,7 @@ services:
 - type: web
   name: medusa-frontend
   runtime: node
-  repo: https://github.com/renderinc/gartner-demo-2024-medusa-eats
+  repo: https://github.com/lexpierce/medusa-eats-demo
   plan: pro
   envVars:
   - key: BACKEND_URL
