@@ -12,7 +12,7 @@ export default function RestaurantCategory({
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-2xl font-medium">{categoryName}Famous in your neighborhood</h2>
+      <h2 className="text-2xl font-medium">{categoryName}Famous in local neighborhood</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
         {restaurants.map((restaurant) => (
           <Link
