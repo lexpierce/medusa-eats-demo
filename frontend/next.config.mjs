@@ -11,11 +11,15 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "medusa-eats-frontend.onrender.com",
+        hostname: "medusa-eats-frontend-demo.onrender.com",
       },
       {
         protocol: "https",
         hostname: "medusa-eats-frontend-blueprint.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-eats-frontend-demo-blueprint.onrender.com",
       },
       {
         protocol: "https",
@@ -24,6 +28,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "medusa-eats-demo.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "robohash.org",
       },
     ],
   },
