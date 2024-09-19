@@ -10,6 +10,7 @@ import { Clock } from "@medusajs/icons";
 import { Container, Heading, Text } from "@medusajs/ui";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
+import Image from 'next/image';
 
 export default async function YourOrderPage() {
   const deliveryId = cookies().get("_medusa_delivery_id")?.value;
@@ -79,7 +80,7 @@ export default async function YourOrderPage() {
           <Heading>Order {delivery.id.slice(-4)}</Heading>
           {delivery.items.map((item: any) => (
             <div key={item.id} className="flex items-center gap-4 h-fit">
-              <img
+              <Image
                 src={item.thumbnail}
                 alt={item.title}
                 className="w-16 h-16 rounded-md"

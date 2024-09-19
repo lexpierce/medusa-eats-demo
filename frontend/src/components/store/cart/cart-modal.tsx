@@ -4,6 +4,7 @@ import { removeItemFromCart } from "@frontend/lib/actions";
 import { XMark } from "@medusajs/icons";
 import { Button, Container, Heading, IconButton, Text } from "@medusajs/ui";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function CartModal({
   cart,
@@ -50,7 +51,7 @@ function CartItem({ item }: { item: Record<string, any> }) {
 
   return (
     <div className="flex items-center gap-4">
-      <img
+      <Image
         src={item.product.thumbnail}
         alt={item.title}
         className="w-16 h-16 rounded-md"

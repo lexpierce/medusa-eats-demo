@@ -6,6 +6,7 @@ import { IconButton } from "@medusajs/ui";
 import { Plus } from "@medusajs/icons";
 import { addToCart } from "@frontend/lib/actions";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function DishCard({
   product,
@@ -37,7 +38,7 @@ export default function DishCard({
         </Text>
       </div>
       <div className="relative h-fit">
-        <img
+        <Image
           src={product.thumbnail!}
           width={100}
           height={100}
