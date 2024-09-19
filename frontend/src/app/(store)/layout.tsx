@@ -7,6 +7,7 @@ import { IconButton, Text } from "@medusajs/ui";
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import { Suspense } from "react";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Medusa Eats",

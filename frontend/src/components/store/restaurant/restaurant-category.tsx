@@ -2,6 +2,7 @@ import { RestaurantDTO } from "@frontend/lib/types";
 import { ClockSolidMini } from "@medusajs/icons";
 import { Badge } from "@medusajs/ui";
 import { Link } from "next-view-transitions";
+import Image from 'next/image';
 
 export default function RestaurantCategory({
   restaurants,

@@ -5,6 +5,7 @@ import {
   RestaurantDTO,
 } from "@frontend/lib/types";
 import { Badge, Text } from "@medusajs/ui";
+import Image from 'next/image';
 
 const BACKEND_URL =
   process.env.BACKEND_URL ||

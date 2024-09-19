@@ -7,6 +7,7 @@ import {
 } from "@frontend/lib/data";
 import { ProductDTO, ProductVariantDTO } from "@medusajs/types";
 import { Heading, Table, Text } from "@medusajs/ui";
+import Image from 'next/image';
 
 export default async function MenuPage() {
   const user = await retrieveUser();

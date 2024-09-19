@@ -10,6 +10,7 @@ import { Clock } from "@medusajs/icons";
 import { Container, Heading, Text } from "@medusajs/ui";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
+import Image from 'next/image';
 
 export default async function YourOrderPage() {
   const deliveryId = cookies().get("_medusa_delivery_id")?.value;

@@ -6,6 +6,7 @@ import { IconButton } from "@medusajs/ui";
 import { Plus } from "@medusajs/icons";
 import { addToCart } from "@frontend/lib/actions";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function DishCard({
   product,

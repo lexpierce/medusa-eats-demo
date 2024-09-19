@@ -1,6 +1,7 @@
 import { retrieveCart, retrieveRestaurant } from "@frontend/lib/data";
 import { Container, Heading, Text } from "@medusajs/ui";
 import { cookies } from "next/headers";
+import Image from 'next/image';
 
 export async function OrderSummary() {
   const cartId = cookies().get("_medusa_cart_id")?.value;

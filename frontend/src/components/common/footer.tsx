@@ -1,6 +1,7 @@
 import { Text } from "@medusajs/ui";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Image from 'next/image';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 

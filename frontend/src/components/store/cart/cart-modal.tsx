@@ -4,6 +4,7 @@ import { removeItemFromCart } from "@frontend/lib/actions";
 import { XMark } from "@medusajs/icons";
 import { Button, Container, Heading, IconButton, Text } from "@medusajs/ui";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function CartModal({
   cart,
