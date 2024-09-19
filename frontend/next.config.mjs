@@ -15,6 +15,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "medusa-eats-frontend.onrender.com",
+      },
+      {
+        protocol: "https",
         hostname: "medusa-eats-frontend-blueprint.onrender.com",
       },
       {
