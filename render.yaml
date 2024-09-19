@@ -5,7 +5,7 @@ databases:
     ipAllowList: []
     postgresMajorVersion: "16"
 services:
-- type: pserv
+- type: web
   name: medusa-eats-api-blueprint
   runtime: node
   repo: https://github.com/lexpierce/medusa-eats-demo
@@ -45,7 +45,7 @@ services:
   - key: JWT_SECRET
     fromService:
       name: medusa-eats-api-blueprint
-      type: pserv
+      type: web
       envVarKey: JWT_SECRET
   region: virginia
   buildCommand: yarn install; yarn run build
