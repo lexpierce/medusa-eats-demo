@@ -37,7 +37,7 @@ export default function DishCard({
         </Text>
       </div>
       <div className="relative h-fit">
-        <img
+        <Image
           src={product.thumbnail!}
           width={100}
           height={100}

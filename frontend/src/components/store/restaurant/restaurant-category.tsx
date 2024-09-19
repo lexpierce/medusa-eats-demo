@@ -21,7 +21,7 @@ export default function RestaurantCategory({
             className="bg-ui-bg-base rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out max-w-2xl min-w-fit"
           >
             {restaurant.image_url && (
-              <img
+              <Image
                 src={restaurant.image_url}
                 alt={restaurant.name}
                 className="object-cover h-48 w-full rounded-t-lg"

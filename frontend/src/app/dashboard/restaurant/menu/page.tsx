@@ -68,7 +68,7 @@ export default async function MenuPage() {
                   <Table.Row key={product.id}>
                     <Table.Cell>
                       {product.thumbnail && (
-                        <img
+                        <Image
                           src={product.thumbnail}
                           className="h-12 w-12 rounded-md m-2"
                           width={48}

@@ -58,7 +58,7 @@ export default async function AccountBadge({
             Deliveries: <span className="font-bold">{deliveries?.length}</span>
           </Badge>
         </div>
-        <img
+        <Image
           src={
             "https://robohash.org/" +
             data.id +

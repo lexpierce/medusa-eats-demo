@@ -24,7 +24,7 @@ export async function OrderSummary() {
       <div className="flex gap-4 justify-between flex-wrap">
         {cart?.items?.map((item: any) => (
           <div key={item.id} className="flex items-center gap-4">
-            <img
+            <Image
               src={item.product.thumbnail}
               alt={item.title}
               className="w-16 h-16 rounded-md"
