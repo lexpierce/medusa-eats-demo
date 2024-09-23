@@ -318,7 +318,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
   logger.info("Seeding restaurant data...");
   const { restaurant } = medusaEatsSeedData;
 
-  restaurant.image_url = FRONTEND_URL + restaurant.image_url;
+  // restaurant.image_url = FRONTEND_URL + restaurant.image_url;
 
   const { result: createdRestaurant } = await createRestaurantWorkflow(
     container
