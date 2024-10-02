@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     // Disable the default Image Optimization API for this demo.
-    unoptimized: true,
+    // unoptimized: true,
     remotePatterns: [
       {
         protocol: "http",
