@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     // Disable the default Image Optimization API for this demo.
-    unoptimized: true,
+    // unoptimized: true,
     remotePatterns: [
       {
         protocol: "http",
@@ -12,6 +12,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "medusa-eats-frontend-demo.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-eats-frontend-yy4i.onrender.com",
       },
       {
         protocol: "https",
