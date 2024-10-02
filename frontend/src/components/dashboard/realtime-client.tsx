@@ -17,9 +17,6 @@ export default function RealtimeClient({
   const router = useRouter();
 
   useEffect(() => {
-    const source = new EventSource(serverUrl);
-    const audio = new Audio("/notification.mp3");
-
     let serverUrl = "/api/subscribe";
 
     if (restaurantId) {
@@ -33,6 +30,8 @@ export default function RealtimeClient({
     if (deliveryId) {
       serverUrl += `?delivery_id=${deliveryId}`;
     }
+    const source = new EventSource(serverUrl);
+    const audio = new Audio("/notification.mp3");
 
     source.onmessage = (message: Record<string, any>) => {
       const data = JSON.parse(message.data);
