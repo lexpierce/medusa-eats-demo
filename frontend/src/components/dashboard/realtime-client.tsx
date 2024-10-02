@@ -16,23 +16,23 @@ export default function RealtimeClient({
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
-  let serverUrl = "/api/subscribe";
-
-  if (restaurantId) {
-    serverUrl += `?restaurant_id=${restaurantId}`;
-  }
-
-  if (driverId) {
-    serverUrl += `?driver_id=${driverId}`;
-  }
-
-  if (deliveryId) {
-    serverUrl += `?delivery_id=${deliveryId}`;
-  }
-
   useEffect(() => {
     const source = new EventSource(serverUrl);
     const audio = new Audio("/notification.mp3");
+
+    let serverUrl = "/api/subscribe";
+
+    if (restaurantId) {
+      serverUrl += `?restaurant_id=${restaurantId}`;
+    }
+
+    if (driverId) {
+      serverUrl += `?driver_id=${driverId}`;
+    }
+
+    if (deliveryId) {
+      serverUrl += `?delivery_id=${deliveryId}`;
+    }
 
     source.onmessage = (message: Record<string, any>) => {
       const data = JSON.parse(message.data);
@@ -47,7 +47,7 @@ export default function RealtimeClient({
     return () => {
       source.close();
     };
-  }, []);
+  }, [router]);
 
   if (isPending) {
     return (
