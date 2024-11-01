@@ -6,7 +6,7 @@ databases:
     postgresMajorVersion: "16"
 services:
 - type: web
-  name: medusa-eats-api-blueprint
+  name: medusa-eats-api-blueprint-pineapple
   runtime: node
   repo: https://github.com/lexpierce/medusa-eats-demo
   plan: standard
@@ -17,7 +17,7 @@ services:
       type: redis
       property: connectionString
   - key: FRONTEND_URL
-    value: https://medusa-eats-demo-blueprint.onrender.com 
+    value: https://medusa-eats-demo-blueprint-pineapple.onrender.com 
   - key: DATABASE_URL
     fromDatabase:
       name: medusa-db-blueprint
@@ -35,16 +35,16 @@ services:
     targetMemoryPercent: 80
   rootDir: ./backend
 - type: web
-  name: medusa-eats-demo-blueprint
+  name: medusa-eats-demo-blueprint-pineapple
   runtime: node
   repo: https://github.com/lexpierce/medusa-eats-demo
   plan: starter
   envVars:
   - key: BACKEND_URL
-    value: https://medusa-eats-api-blueprint.onrender.com
+    value: https://medusa-eats-api-blueprint-pineapple.onrender.com
   - key: JWT_SECRET
     fromService:
-      name: medusa-eats-api-blueprint
+      name: medusa-eats-api-blueprint-pineapple
       type: web
       envVarKey: JWT_SECRET
   region: virginia
