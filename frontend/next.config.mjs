@@ -35,7 +35,15 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "medusa-eats-demo.onrender.com",
+        hostname: "medusa-eats-cauliflower.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-eats-broccoli.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-eats-broccolini.onrender.com",
       },
       {
         protocol: "https",
