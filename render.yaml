@@ -43,12 +43,12 @@ services:
   - key: BACKEND_URL
     fromService:
       name: medusa-eats-api-blueprint-pineapple
-      type: web
+      type: pserv
       property: hostport
   - key: JWT_SECRET
     fromService:
       name: medusa-eats-api-blueprint-pineapple
-      type: web
+      type: pserv
       envVarKey: JWT_SECRET
   region: virginia
   buildCommand: yarn install; yarn run build
