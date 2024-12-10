@@ -47,6 +47,18 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "medusa-eats-demo-blueprint-pineapple.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-eats-demo-blueprint-guava.onrender.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-eats-demo-blueprint-banana.onrender.com",
+      },
+      {
+        protocol: "https",
         hostname: "robohash.org",
       },
     ],
