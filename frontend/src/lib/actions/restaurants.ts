@@ -5,10 +5,7 @@ import { RestaurantDTO, RestaurantProductDTO } from "@frontend/lib/types";
 import { promises as fs } from "fs";
 import { revalidatePath, revalidateTag } from "next/cache";
 
-const BACKEND_URL =
-  {"http://" + process.env.BACKEND_URL} ||
-  process.env.NEXT_PUBLIC_BACKEND_URL ||
-  "http://localhost:9000";
+const BACKEND_URL = {"http://" + process.env.BACKEND_URL};
 const FRONTEND_URL =
   (process.env.NEXT_PUBLIC_VERCEL_URL &&
     `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`) ||
