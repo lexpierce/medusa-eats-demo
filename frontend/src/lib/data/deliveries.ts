@@ -1,6 +1,6 @@
 import { DeliveryDTO } from "@frontend/lib/types";
 
-const BACKEND_URL = {`http://${process.env.BACKEND_URL}`};
+const BACKEND_URL = `http://${process.env.BACKEND_URL}`;
 
 export async function retrieveDelivery(
   deliveryId: string

@@ -1,6 +1,6 @@
 import { retrieveSession } from "./sessions";
 
-const BACKEND_URL = {`http://${process.env.BACKEND_URL}`};
+const BACKEND_URL = `http://${process.env.BACKEND_URL}`;
 
 export async function retrieveUser() {
   const token = retrieveSession();

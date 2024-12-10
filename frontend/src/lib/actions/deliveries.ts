@@ -3,7 +3,7 @@
 import { DeliveryDTO, DeliveryStatus } from "@frontend/lib/types";
 import { revalidateTag } from "next/cache";
 
-const BACKEND_URL = {`http://${process.env.BACKEND_URL}`};
+const BACKEND_URL = `http://${process.env.BACKEND_URL}`;
 
 export async function proceedDelivery(
   delivery: DeliveryDTO,

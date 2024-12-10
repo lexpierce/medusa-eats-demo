@@ -2,7 +2,7 @@ import { RestaurantDTO } from "@frontend/lib/types";
 import RestaurantCategory from "@frontend/components/store/restaurant/restaurant-category";
 import { Heading } from "@medusajs/ui";
 
-const BACKEND_URL = {`http://${process.env.BACKEND_URL}`};
+const BACKEND_URL = `http://${process.env.BACKEND_URL}`;
 
 export default async function Home() {
   const restaurants = await fetch(BACKEND_URL + "/restaurants")

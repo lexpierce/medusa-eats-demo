@@ -6,7 +6,7 @@ import { CartDTO, CreateCartDTO } from "@medusajs/types";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
-const BACKEND_URL = {`http://${process.env.BACKEND_URL}`};
+const BACKEND_URL = `http://${process.env.BACKEND_URL}`;
 
 export async function createCart(
   data: CreateCartDTO,

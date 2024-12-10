@@ -11,7 +11,7 @@ import {
   destroySession,
 } from "../../lib/data/sessions";
 
-const BACKEND_URL = {`http://${process.env.BACKEND_URL}`};
+const BACKEND_URL = `http://${process.env.BACKEND_URL}`;
 
 type FormState =
   | {
