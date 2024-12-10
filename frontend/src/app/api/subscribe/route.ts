@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
 const BACKEND_URL =
-  process.env.BACKEND_URL ||
+  {"http://" + process.env.BACKEND_URL} ||
   process.env.NEXT_PUBLIC_BACKEND_URL ||
   "http://localhost:9000";
 

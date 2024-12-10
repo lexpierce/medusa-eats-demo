@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 const BACKEND_URL =
-  process.env.BACKEND_URL ||
+  {"http://" + process.env.BACKEND_URL} ||
   process.env.NEXT_PUBLIC_BACKEND_URL ||
   "http://localhost:9000";
 

@@ -4,7 +4,7 @@ import { DeliveryDTO, DeliveryStatus } from "@frontend/lib/types";
 import { revalidateTag } from "next/cache";
 
 const BACKEND_URL =
-  process.env.BACKEND_URL ||
+  {"http://" + process.env.BACKEND_URL} ||
   process.env.NEXT_PUBLIC_BACKEND_URL ||
   "http://localhost:9000";
 
